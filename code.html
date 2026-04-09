@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RN TECH — Tecnologia Sem Limites</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#e5e2e1",
+                      "tertiary-fixed": "#47ffb8",
+                      "secondary": "#d2bbff",
+                      "primary-container": "#2563ff",
+                      "secondary-fixed": "#eaddff",
+                      "primary-fixed-dim": "#b6c4ff",
+                      "on-primary-fixed-variant": "#003baf",
+                      "outline-variant": "#434656",
+                      "primary": "#b6c4ff",
+                      "tertiary": "#00e29d",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-tertiary-fixed": "#002113",
+                      "on-secondary-fixed-variant": "#5a00c6",
+                      "surface-container-highest": "#353534",
+                      "surface-container": "#201f1f",
+                      "on-secondary": "#3f008e",
+                      "on-primary": "#00287d",
+                      "tertiary-container": "#008158",
+                      "on-tertiary": "#003824",
+                      "on-tertiary-container": "#daffe8",
+                      "surface-container-high": "#2a2a2a",
+                      "on-surface-variant": "#c3c5d8",
+                      "surface-variant": "#353534",
+                      "on-primary-container": "#f7f6ff",
+                      "tertiary-fixed-dim": "#00e29d",
+                      "on-secondary-container": "#c9aeff",
+                      "surface-tint": "#b6c4ff",
+                      "on-error-container": "#ffdad6",
+                      "background": "#131313",
+                      "inverse-primary": "#004fe5",
+                      "outline": "#8d90a2",
+                      "inverse-surface": "#e5e2e1",
+                      "surface-container-low": "#1c1b1b",
+                      "surface": "#131313",
+                      "secondary-container": "#6001d1",
+                      "error": "#ffb4ab",
+                      "primary-fixed": "#dce1ff",
+                      "secondary-fixed-dim": "#d2bbff",
+                      "error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "on-primary-fixed": "#00164f",
+                      "inverse-on-surface": "#313030",
+                      "on-error": "#690005",
+                      "on-secondary-fixed": "#25005a",
+                      "on-surface": "#e5e2e1",
+                      "surface-dim": "#131313",
+                      "surface-bright": "#3a3939"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Space Grotesk"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>body {
+    background-color: #131313;
+    color: #e5e2e1;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden
+    }
+.font-headline {
+    font-family: "Space Grotesk", sans-serif
+    }
+.text-glow-primary {
+    text-shadow: 0 0 20px rgba(37, 99, 255, 0.4)
+    }
+.bg-gradient-tech {
+    background: linear-gradient(135deg, #2563ff 0%, #6001d1 100%)
+    }
+.glass-panel {
+    background: rgba(19, 19, 19, 0.6);
+    backdrop-filter: blur(20px)
+    }
+.cursor-blink {
+    animation: blink 1s step-end infinite
+    }
+@keyframes blink {
+    50% {
+        opacity: 0;
+        }
+    }
+.grain-overlay {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuChwOiCrYuY-Wwgl9JDmsAuB5EVMk_z-UqKQAEFl3Gmj1wnA2iENIOSd9VgQpiDtFwHNEJjoRn5ov4RzVX0R3vmn7zmVwk8CQV4TbC9on0-dURXERmw7ICz-N8H1hbnGTQbhpV1x4ssvu_Yr2jXicLn36ZoWweEHefhF0-2_SS6-vdNWkgLq9uWq4TAB7hz4e9PJz8H3KDefQyQVlNrCqPJ1kNb4RrCCdnN44xGHvS9tWS_0fPyUfcEUu3N7fPmJ_pmVedyENo9wWUu);
+    opacity: 0.03;
+    z-index: 9999
+    }</style>
+</head>
+<body class="selection:bg-primary-container selection:text-white">
+<div class="grain-overlay"></div>
+<!-- Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-950/60 backdrop-blur-xl">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-12 py-6">
+<a class="inline-flex items-center gap-3" href="#" aria-label="RN TECH">
+<img src="./LogoRNtech.png" alt="RN TECH" class="h-7 w-auto object-contain"/>
+<span class="sr-only">RN TECH</span>
+</a>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-blue-500 font-bold border-b-2 border-blue-500 pb-1 font-headline" href="#como-trabalhamos">Como trabalhamos</a>
+<a class="text-neutral-400 hover:text-neutral-100 transition-colors font-headline" href="#time">Nosso time</a>
+<a class="bg-gradient-tech px-6 py-2.5 rounded-none font-headline font-bold text-sm tracking-widest uppercase hover:scale-95 transition-all duration-200" href="#contato">
+                    Falar com especialista
+                </a>
+</div>
+</div>
+</nav>
+<main class="relative">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col justify-center px-12 relative overflow-hidden bg-surface-container-lowest">
+<!-- Signature Glow -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary-container/10 blur-[120px] rounded-full"></div>
+<div class="max-w-7xl mx-auto w-full pt-20">
+<div class="inline-flex items-center gap-3 mb-8">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="text-tertiary font-headline tracking-[0.3em] text-xs font-bold uppercase">System Status: Optimal</span>
+</div>
+<h1 class="text-[clamp(3rem,8vw,6rem)] font-black font-headline leading-[0.9] tracking-tighter mb-12 max-w-5xl">
+                    RN TECH: <br/>
+<span class="text-primary-container">Tecnologia sem limite</span> para resolver problemas reais<span class="text-primary cursor-blink">_</span>
+</h1>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-12">
+<p class="text-xl text-on-surface-variant max-w-xl leading-relaxed font-light">
+                        Criamos soluções sob medida para desafios que não cabem em caixas prontas. Nossa engenharia é moldada pela sua necessidade, não por catálogos de software.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-6 shrink-0">
+<a class="bg-primary-container text-on-primary-container px-10 py-5 font-headline font-bold text-lg hover:bg-primary transition-all duration-300 inline-flex items-center justify-center" href="#contato">
+                            Solicitar orçamento gratuito
+                        </a>
+<a class="bg-surface-container-highest text-on-surface px-10 py-5 font-headline font-bold text-lg border-l-2 border-tertiary flex items-center gap-3 group" href="https://wa.me/5511999999999" rel="noopener noreferrer" target="_blank">
+                            Falar no WhatsApp
+                            <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Problem Section -->
+<section class="py-32 px-12 bg-surface">
+<div class="max-w-7xl mx-auto border-l border-outline-variant/20 pl-12">
+<h2 class="text-4xl md:text-6xl font-headline font-bold leading-tight max-w-4xl">
+                    Empresas não precisam de mais ferramentas. <br/>
+<span class="text-primary">Precisam de soluções que realmente funcionem.</span>
+</h2>
+<div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 text-on-surface-variant text-lg">
+<p>O mercado está saturado de softwares genéricos que prometem revolucionar seu negócio, mas acabam criando novos gargalos operacionais e dependências tecnológicas.</p>
+<p>Na RN TECH, removemos a fricção entre o código e o resultado. Nosso foco é a resolução pragmática de problemas complexos através de arquitetura robusta e pensamento fora da caixa.</p>
+</div>
+</div>
+</section>
+<!-- How We Work - Bento Grid -->
+<section class="py-32 px-12 bg-surface-container-lowest" id="como-trabalhamos">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-baseline mb-20">
+<h3 class="text-3xl font-headline font-bold tracking-tight">Metodologia Cinética</h3>
+<div class="h-px bg-outline-variant/30 flex-grow mx-12"></div>
+<span class="text-primary font-headline text-5xl">01-04</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-high p-10 min-h-[400px] flex flex-col justify-between group hover:bg-primary-container transition-all duration-500">
+<span class="text-6xl font-headline font-black text-outline-variant/20 group-hover:text-white/20">01</span>
+<div>
+<h4 class="text-2xl font-headline font-bold mb-4">Diagnóstico estratégico</h4>
+<p class="text-on-surface-variant group-hover:text-on-primary-container leading-relaxed">Mergulhamos no seu fluxo para entender onde o processo quebra antes de escrever a primeira linha de código.</p>
+</div>
+</div>
+<div class="bg-surface-container-high p-10 min-h-[400px] flex flex-col justify-between group hover:bg-secondary-container transition-all duration-500">
+<span class="text-6xl font-headline font-black text-outline-variant/20 group-hover:text-white/20">02</span>
+<div>
+<h4 class="text-2xl font-headline font-bold mb-4">Construção sob medida</h4>
+<p class="text-on-surface-variant group-hover:text-on-primary-container leading-relaxed">Desenvolvemos o motor tecnológico que sua operação exige, sem excessos e sem as limitações de templates.</p>
+</div>
+</div>
+<div class="bg-surface-container-high p-10 min-h-[400px] flex flex-col justify-between group hover:bg-tertiary-container transition-all duration-500">
+<span class="text-6xl font-headline font-black text-outline-variant/20 group-hover:text-white/20">03</span>
+<div>
+<h4 class="text-2xl font-headline font-bold mb-4">Integração total</h4>
+<p class="text-on-surface-variant group-hover:text-on-primary-container leading-relaxed">Conectamos nossa solução ao seu ecossistema existente, garantindo fluidez e zero perda de dados.</p>
+</div>
+</div>
+<div class="bg-surface-container-high p-10 min-h-[400px] flex flex-col justify-between group hover:bg-surface-bright transition-all duration-500">
+<span class="text-6xl font-headline font-black text-outline-variant/20 group-hover:text-white/20">04</span>
+<div>
+<h4 class="text-2xl font-headline font-bold mb-4">Evolução contínua</h4>
+<p class="text-on-surface-variant group-hover:text-on-surface leading-relaxed">Tecnologia não é estática. Monitoramos e evoluímos sua ferramenta para que ela nunca se torne obsoleta.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Differentials - Horizontal Flow -->
+<section class="py-40 px-12 bg-surface">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
+<div class="md:w-1/3">
+<h2 class="text-5xl font-headline font-bold sticky top-32">O DNA da <br/><span class="text-tertiary">RN TECH.</span></h2>
+</div>
+<div class="md:w-2/3 space-y-px">
+<div class="bg-surface-container-low p-12 flex items-start gap-8 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="terminal">terminal</span>
+<div>
+<h4 class="text-2xl font-headline font-bold mb-2">Não seguimos templates</h4>
+<p class="text-on-surface-variant">Cada linha de código é pensada para o seu cenário específico. O seu negócio não é padrão, sua tech também não deve ser.</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-12 flex items-start gap-8 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="all_out">all_out</span>
+<div>
+<h4 class="text-2xl font-headline font-bold mb-2">Não limitamos tecnologia</h4>
+<p class="text-on-surface-variant">Trabalhamos com a pilha tecnológica que melhor resolve o problema, sem nos prender a modismos ou restrições de plataforma.</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-12 flex items-start gap-8 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="psychology">psychology</span>
+<div>
+<h4 class="text-2xl font-headline font-bold mb-2">Pensamos antes de desenvolver</h4>
+<p class="text-on-surface-variant">Entendemos o impacto de cada decisão técnica no seu balanço financeiro e na experiência do seu usuário final.</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-12 flex items-start gap-8 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="speed">speed</span>
+<div>
+<h4 class="text-2xl font-headline font-bold mb-2">Foco em resultado real</h4>
+<p class="text-on-surface-variant">Não entregamos código. Entregamos redução de custos, aumento de escala e eficiência operacional mensurável.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 px-12 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="bg-surface-container p-16 relative">
+<div class="flex gap-1 mb-8">
+<span class="material-symbols-outlined text-tertiary" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="star" data-weight="fill">star</span>
+</div>
+<p class="text-2xl font-light italic leading-relaxed mb-12">"A RN TECH não só entregou um sistema, eles resolveram um problema que travava nossa empresa há anos. A mentalidade deles é completamente diferente de qualquer agência que já contratamos."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary-container rounded-none"></div>
+<div>
+<p class="font-headline font-bold">Diretor de Operações</p>
+<p class="text-sm text-on-surface-variant">LogTech S.A.</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-16 relative">
+<div class="flex gap-1 mb-8">
+<span class="material-symbols-outlined text-tertiary" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="star" data-weight="fill">star</span>
+</div>
+<p class="text-2xl font-light italic leading-relaxed mb-12">"Eles entendem de business tanto quanto entendem de código. Isso economiza tempo e evita erros de tradução entre o que precisamos e o que é construído."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-container rounded-none"></div>
+<div>
+<p class="font-headline font-bold">CTO &amp; Founder</p>
+<p class="text-sm text-on-surface-variant">FinScale Ecosystem</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Team Mentality -->
+<section class="py-32 px-12 bg-surface" id="time">
+<div class="max-w-7xl mx-auto text-center">
+<h2 class="text-4xl md:text-6xl font-headline font-bold mb-12">Mentalidade &gt; Títulos</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/20">
+<div class="bg-surface p-12">
+<p class="text-lg leading-relaxed text-on-surface-variant">"Um time formado por pessoas que entendem que tecnologia não é sobre código — é sobre resolver."</p>
+</div>
+<div class="bg-surface p-12">
+<p class="text-lg leading-relaxed text-on-surface-variant">"Nossa hierarquia é baseada no mérito da melhor ideia, não no cargo de quem a deu."</p>
+</div>
+<div class="bg-surface p-12">
+<p class="text-lg leading-relaxed text-on-surface-variant">"Obsessão pela simplicidade técnica para resolver a complexidade do negócio."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA & Contact -->
+<section class="py-32 px-12 bg-surface-container-lowest" id="contato">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24">
+<div>
+<h2 class="text-5xl md:text-7xl font-headline font-black mb-8 leading-tight">
+                        Fale com a RN TECH e receba um <span class="text-primary-container">diagnóstico gratuito.</span>
+</h2>
+<p class="text-2xl text-on-surface-variant font-light mb-12">
+                        Sem compromisso. Sem enrolação. <br/>Direto ao ponto.
+                    </p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+<a class="text-lg hover:text-primary transition-colors" href="mailto:contato@rntech.com.br">contato@rntech.com.br</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="chat">chat</span>
+<a class="text-lg hover:text-tertiary transition-colors" href="tel:+5511999999999">+55 11 99999-9999</a>
+<a class="text-lg hover:text-tertiary transition-colors" href="https://wa.me/5511999999999" rel="noopener noreferrer" target="_blank">(WhatsApp)</a>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-12">
+<form class="space-y-10" id="lead-form" action="#" method="post">
+<div class="group">
+<label class="block text-xs uppercase tracking-widest text-outline mb-2">Nome Completo</label>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all px-0 py-4 text-lg" type="text" name="nome" autocomplete="name" required/>
+</div>
+<div class="group">
+<label class="block text-xs uppercase tracking-widest text-outline mb-2">WhatsApp / Telefone</label>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all px-0 py-4 text-lg" type="tel" name="telefone" autocomplete="tel" required/>
+</div>
+<div class="group">
+<label class="block text-xs uppercase tracking-widest text-outline mb-2">Qual o seu maior desafio hoje?</label>
+<textarea class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all px-0 py-4 text-lg resize-none" rows="4" name="desafio" required></textarea>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-6 font-headline font-black text-xl hover:bg-primary transition-all duration-300" type="submit">
+                            ENVIAR DIAGNÓSTICO
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 w-full py-20 px-12">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+<div>
+<div class="inline-flex items-center gap-3">
+<img src="./LogoRNtech.png" alt="RN TECH" class="h-6 w-auto object-contain opacity-90"/>
+<span class="sr-only">RN TECH</span>
+</div>
+<p class="mt-4 text-neutral-500 text-sm font-['Inter'] leading-relaxed">Criando tecnologia sem limites para o seu negócio evoluir.</p>
+</div>
+<div class="flex gap-8 justify-center">
+<a class="text-neutral-500 hover:text-blue-400 transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="text-neutral-500 hover:text-blue-400 transition-colors opacity-80 hover:opacity-100" href="#">GitHub</a>
+<a class="text-neutral-500 hover:text-blue-400 transition-colors opacity-80 hover:opacity-100" href="#contato">Contato</a>
+</div>
+<div class="text-right">
+<p class="text-neutral-500 text-sm font-['Inter'] leading-relaxed">© 2024 RN TECH. ALL RIGHTS RESERVED.</p>
+</div>
+</div>
+</footer>
+<script>
+  (function () {
+    const form = document.getElementById("lead-form");
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const data = new FormData(form);
+      const nome = String(data.get("nome") || "").trim();
+      const telefone = String(data.get("telefone") || "").trim();
+      const desafio = String(data.get("desafio") || "").trim();
+
+      const subject = "Pedido de diagnóstico — RN TECH";
+      const body = [
+        `Nome: ${nome}`,
+        `Telefone/WhatsApp: ${telefone}`,
+        "",
+        "Desafio:",
+        desafio,
+      ].join("\n");
+
+      const mailto = `mailto:contato@rntech.com.br?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailto;
+    });
+  })();
+</script>
+</body></html>
