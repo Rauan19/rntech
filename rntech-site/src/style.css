@@ -156,15 +156,15 @@ code {
   }
 }
 
+/* Layout full-width (evita “caixa” central do template padrão) */
 #app {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  text-align: inherit;
+  border: none;
   min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+  display: block;
   box-sizing: border-box;
 }
 
@@ -295,26 +295,39 @@ code {
   }
 }
 
-/* RN TECH: overrides do layout final */
+/* RN TECH: base + tokens (Tailwind CDN traz utilitários; isto alinha tipografia e ícones) */
 :root {
   color-scheme: dark;
+  /* Evita cor herdada do template claro no :root acima */
+  color: #e5e2e1;
 }
 
 html {
-  font-size: 15px;
+  font-size: 16px;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: #131313;
   color: #e5e2e1;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   overflow-x: hidden;
   margin: 0;
+  line-height: 1.55;
+}
+
+/* Títulos globais do template Vite não competem com utilitários Tailwind nos componentes */
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  color: inherit;
 }
 
 .font-headline {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
 }
 
 .text-glow-primary {
